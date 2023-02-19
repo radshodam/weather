@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap");
+.background {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}
+
+.thunderstorm {
+  background-image: url("../../public/images/Thunderstorm.jpg");
+}
+
+.drizzle {
+  background-image: url("../../public/images/drizzle.jpg");
+}
+
+.rain {
+  background-image: url("../../public/images/rainy.jpg");
+}
+
+.snow {
+  background-image: url("../../public/images/snow.jpg");
+}
+
+.atmosphere {
+  background-image: url("../../public/images/Atmosphere.jpg");
+}
+
+.clear {
+  background-image: url("../../public/images/clean.jpg");
+}
+
+.clouds {
+  background-image: url("../../public/images/clouds.jpg");
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* import the weather.scss file */
+body {
+  font-family: "Exo", sans-serif;
+  color: #212121;
+}/*# sourceMappingURL=styles.css.map */
