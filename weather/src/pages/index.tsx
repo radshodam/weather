@@ -73,7 +73,7 @@ const Weather: React.FC = () => {
       className={` bg-center bg-cover h-screen bg-no-repeat w-screen ${backgroundClass}`}
     >
       <div className="flex justify-center mx-auto w-full items-center h-full">
-        <div className="w-full p-10 rounded-md lg:w-1/4 backdrop-blur-sm bg-white/30 ">
+        <div className="w-11/12 mx-2 p-10 rounded-md lg:w-1/4 backdrop-blur-sm bg-white/30 ">
           <h1 className="font-bold text-center py-4 text-gray-800 text-shadow-md text-4xl ">
             Weather App
           </h1>
