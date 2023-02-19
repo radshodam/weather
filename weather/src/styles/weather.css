@@ -1,3 +1,40 @@
+.loading-background {
+  background-image: url("../../public/images/default.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes loading {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+.default {
+  background-image: url("../../public/images/Thunderstorm.jpg");
+}
+
 .thunderstorm {
   background-image: url("../../public/images/Thunderstorm.jpg");
 }
@@ -12,8 +49,32 @@
 
 .snow {
   background-image: url("../../public/images/snow.jpg");
+  position: relative;
+  overflow: hidden;
 }
 
+.snow:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/images/snowfall.png");
+  z-index: 1;
+  pointer-events: none;
+  animation: snowfall 50s linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
 .atmosphere {
   background-image: url("../../public/images/Atmosphere.jpg");
 }

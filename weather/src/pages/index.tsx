@@ -57,13 +57,13 @@ const Weather: React.FC = () => {
         backgroundClass = "snow";
         break;
       case "clear":
-        backgroundClass = "clear";
+        backgroundClass = "clear sunset";
         break;
       case "clouds":
         backgroundClass = "clouds";
         break;
       default:
-        backgroundClass = "";
+        backgroundClass = "default";
         break;
     }
   }
@@ -73,37 +73,46 @@ const Weather: React.FC = () => {
       className={` bg-center bg-cover h-screen bg-no-repeat w-screen ${backgroundClass}`}
     >
       <div className="flex justify-center mx-auto w-full items-center h-full">
-        <div className="w-full px-2 lg:w-1/4">
+        <div className="w-full p-10 rounded-md lg:w-1/4 backdrop-blur-sm bg-white/30 ">
           <h1 className="font-bold text-center py-4 text-gray-800 text-shadow-md text-4xl ">
             Weather App
           </h1>
           <div>
-            {isLoading && (
-              // <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
-              <p>loading</p>
-            )}
-            {weatherData && (
-              <div>
+            {isLoading ? (
+              <div className="animate-pulse">
                 <div className="flex justify-around">
-                  <h2 className="p-2 text-xl">{weatherData.name}</h2>
-                  <div className="p-2 text-xl">
-                    <span>{weatherData.weather[0].description}</span>
-                  </div>
+                  <div className="p-2 text-xl">Loading...</div>
                 </div>
                 <div className="flex justify-around">
-                  <div className="pt-4 text-2xl">
-                    <FaTemperatureHigh />
-                    <span>{Math.round(weatherData.main.temp_max)}&deg;C</span>
-                  </div>
-                  <div>
-                    <img
-                      src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
-                      alt={weatherData.weather[0].description}
-                      className="rounded-2xl w-20 h-20"
-                    />
+                  <div className="p-2 text-xl">
+                    <div className="bg-gray-200 h-24 w-24 rounded-full"></div>
                   </div>
                 </div>
               </div>
+            ) : (
+              weatherData && (
+                <div>
+                  <div className="flex justify-around">
+                    <h2 className="p-2 text-xl">{weatherData.name}</h2>
+                    <div className="p-2 text-xl">
+                      <span>{weatherData.weather[0].description}</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-around">
+                    <div className="pt-4 text-2xl">
+                      <FaTemperatureHigh />
+                      <span>{Math.round(weatherData.main.temp_max)}&deg;C</span>
+                    </div>
+                    <div>
+                      <img
+                        src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
+                        alt={weatherData.weather[0].description}
+                        className="rounded-2xl w-20 h-20"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )
             )}
           </div>
           <form
@@ -115,12 +124,12 @@ const Weather: React.FC = () => {
                 type="text"
                 name="city"
                 id="name"
-                className="block w-full py-2 rounded-md border-gray-300 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                className="block w-full py-2 rounded-md border-gray-300 px-4 shadow-sm focus:border-sky-300 focus:ring-sky-300 sm:text-sm"
                 placeholder="please Choose City :) "
               />
             </div>
             <button
-              className="inline-flex mx-auto my-4 w-32 items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="inline-flex  backdrop-blur-sm bg-white/60 shadow-lg mx-auto mt-8 w-32 items-center rounded-md  bg-white px-4 py-2 text-base font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2"
               type="submit"
             >
               search City!
