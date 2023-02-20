@@ -16,7 +16,7 @@
   width: 100%;
   height: 100%;
   z-index: 9999;
-  animation: loading ;
+  animation: loading;
 }
 
 @keyframes loading {
@@ -30,11 +30,6 @@
     opacity: 0.5;
   }
 }
-
-
-
-
-
 
 @keyframes loading {
   0% {
@@ -102,3 +97,12 @@
 .clouds {
   background-image: url("../../public/images/clouds.jpg");
 }
+.clouds-sun {
+  background-image: url("../../public/images/clouds.jpg");
+}
+
+// .day {
+// }
+// .night {
+// }
+
